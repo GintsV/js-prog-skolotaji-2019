@@ -14,8 +14,8 @@
         div.innerHTML = JSON.stringify(masivs);
         root.appendChild(div);
         }
-        function render(masivs) {
-        let div = document.getElementById("result");
+        function render() {
+        let div = document.getElementById("demo");
         div.innerHTML = JSON.stringify(masivs);
         }
         function ielade() {
@@ -24,10 +24,39 @@
           }
           document.getElementById("demo").innerHTML = masivs;
         }
-        
-        
-    
-  </script>
+
+        function pievieno() {   
+        let value = parseInt(document.getElementById("pievieno_vertibu").value);
+        if (value) {
+          masivs.push(value);
+        }
+        render();
+        }
+
+        function nonem() {
+        masivs.pop() 
+        render();
+      }
+      function render() {
+        let div = document.getElementById("demo");
+        div.innerHTML = JSON.stringify(masivs);
+      }
+      function pievienoAizIndeksa() {
+        let index = Number(document.getElementById("pievieno_indekss").value) + 1;
+        let value = parseInt(document.getElementById("pievieno_indekss_vertiba").value);
+        if (index <= masivs.length && index >= 0) {
+          masivs.splice(index, 0, value);
+        }
+        render();
+      }
+      function nonemPecIndeksa() {
+        let index = Number(document.getElementById("nonem_indekss").value);
+        if (index <= masivs.length && index >= 0) {
+          masivs.splice(index, 1);
+        }
+        render();
+      }
+    </script>
 </head>
 <body onload="ielade()">
   <div id="task">
@@ -47,7 +76,8 @@
 
 
 
-   <!-- <script>
+<!--
+   <script>
 
     const indeks = prompt(`ievadi masiva augstumu`, 0);
       const vertiba  = prompt(`ievadiet vertibu`);
@@ -59,7 +89,7 @@
       <p>Īzvēlies masīvu ievadot skaitli no 1 līdz 10</p>
       <button onclick="myFunction()">Izvēlēties</button>
       <p id="demo"></p>
-  -->
+    -->
       <script>
       function myFunction() {
         var x = Math.floor((Math.random() * 10) + 1);
@@ -69,23 +99,23 @@
     <div>
       <div>Pievieno vērtību masīva beigās</div>
       <input id="pievieno_vertibu" type="number" value="0"/>
-      <button onClick="pievienot()">Pievieno</button>
+      <button onClick="pievieno()">Pievieno</button>
     </div>
     <div>
       <div>Noņem vērtību masīva beigās</div>
       <input id="noņem_vertibu" type="number" value="0"/>
-      <button onClick="nonemt()">Noņem</button>
+      <button onClick="nonem()">Noņem</button>
     </div>
     <div>
       <div>Pievieno vērtību aiz norādītā indeksa</div>
-      <input id="pievienot_indekss" type="number" placeholder="indekss"/>
-      <input id="pievienot_indekss_vertiba" type="text" placeholder="vērtība"/>
-      <button onClick="pievienotAizIndeksa()">Pievieno</button>
+      <input id="pievieno_indekss" type="number" placeholder="indekss"/>
+      <input id="pievieno_indekss_vertiba" type="text" placeholder="vērtība"/>
+      <button onClick="pievienoAizIndeksa()">Pievieno</button>
     </div>
     <div>
       <div>Noņem vērtību norādītajā indeksā</div>
-      <input id="nonemt_indekss" type="number" placeholder="indekss"/>
-      <button onClick="nonemtPecIndeksa()">Noņem</button>
+      <input id="nonem_indekss" type="number" placeholder="indekss"/>
+      <button onClick="nonemPecIndeksa()">Noņem</button>
     </div>
   </div>
   <div id="root"></div>
