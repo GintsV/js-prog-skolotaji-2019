@@ -18,14 +18,18 @@
         let div = document.getElementById("result");
         div.innerHTML = JSON.stringify(masivs);
         }
-        function getRandom(masivs) {
-        return Math.random();
+        function ielade() {
+          for (let i = 0; i < 10; i++) {
+            masivs[i] = Math.floor(Math.random()*10);
+          }
+          document.getElementById("demo").innerHTML = masivs;
         }
         
-
+        
     
   </script>
-  </head>
+</head>
+<body onload="ielade()">
   <div id="task">
     <h1>Manipulācijas ar masīvu</h1>
     <ol>
@@ -36,7 +40,32 @@
       <li>Izveidot funkciju, kura izņems elementu no masīva pēc norādītā indeksa</li>
     </ol>
   </div>
-  <div>
+  <div> 
+      <p>Masīvs</p>
+      <p id="demo"></p>
+
+
+
+
+   <!-- <script>
+
+    const indeks = prompt(`ievadi masiva augstumu`, 0);
+      const vertiba  = prompt(`ievadiet vertibu`);
+      mainitPecIndeksa(indeks, vertiba);
+      print();
+      </script>
+
+    /////////
+      <p>Īzvēlies masīvu ievadot skaitli no 1 līdz 10</p>
+      <button onclick="myFunction()">Izvēlēties</button>
+      <p id="demo"></p>
+  -->
+      <script>
+      function myFunction() {
+        var x = Math.floor((Math.random() * 10) + 1);
+        document.getElementById("demo").innerHTML = x;
+      }
+      </script>
     <div>
       <div>Pievieno vērtību masīva beigās</div>
       <input id="pievieno_vertibu" type="number" value="0"/>
@@ -72,4 +101,5 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
 </html>
