@@ -14,29 +14,17 @@
         div.innerHTML = JSON.stringify(masivs);
         root.appendChild(div);
         }
-        
-        function pievieno() {
-          let value = document.getElementById("pievienot_vertiba").value;
-          if (value) {
-            masivs.push(value);
-          }
-          render;
+        function render(masivs) {
+        let div = document.getElementById("result");
+        div.innerHTML = JSON.stringify(masivs);
         }
-          function nonem() {
-            if (masivs.length > 0) {
-              masivs.pop();
-              {
-          }             
+        function getRandom(masivs) {
+        return Math.random();
+        }
+        
+
     
-    
-    
-    
-    
-    
-    
-    
-    
-    </script>
+  </script>
   </head>
   <div id="task">
     <h1>Manipulācijas ar masīvu</h1>
@@ -72,6 +60,7 @@
     </div>
   </div>
   <div id="root"></div>
+  <div id="masivs"></div>
   <div id="info">
     <h3>Noderīgas saites</h3>
     <ul>
