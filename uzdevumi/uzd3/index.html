@@ -18,13 +18,19 @@
         div.setAttribute("id", "result");
         div.innerHTML = JSON.stringify(mas);
         root.appendChild(div);
-      }    
+      }
+      function render() { 
+        let div = document.getElementById("result");
+        div.innerHTML = JSON.stringify(objekts);
+      }  
     function pievienot() { 
         let key = document.getElementById("pievienot_atslega").value;
         let value = document.getElementById("pievienot_vertiba").value; 
+        render();
     }  
       function nonemt() { 
         let key = document.getElementById("nonemt_atslega").value
+        render();
       }
   
   
