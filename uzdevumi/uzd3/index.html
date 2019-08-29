@@ -11,7 +11,14 @@
   </head>
 
   <script type="text/javascript" >
-  let mas = [{Vards: "Gints", Uzvards: "Valdmanis"}, {Vards: "Maigonis", Uzvards: "Klimpa"}];
+  const mas = [{Vards: "Gints", Uzvards: "Valdmanis"}, {Vards: "Maigonis", Uzvards: "Klimpa"}];
+    function init() {
+        let root = document.getElementById("root"); 
+        let div = document.createElement("DIV");
+        div.setAttribute("id", "result");
+        div.innerHTML = JSON.stringify(mas);
+        root.appendChild(div);
+      }    
     function pievienot() { 
         let key = document.getElementById("pievienot_atslega").value;
         let value = document.getElementById("pievienot_vertiba").value; 
